@@ -11,6 +11,29 @@ To eliminate these, you need to tune your configuration and add rule exclusions.
 It can be a frustrating and time consuming process to inspect the logfiles.
 pamsel is a small tool that might help you a bit with this.
 
+## Compilation
+
+### Linux
+```bash
+g++ -o pamsel pamsel.cc
+# or
+clang++ -o pamsel pamsel.cc
+```
+
+### macOS
+```bash
+# Use clang++ (recommended for macOS)
+clang++ -o pamsel pamsel.cc
+
+# Note: g++ from Homebrew may have issues with system headers
+```
+
+### Windows
+```bash
+# Using MinGW
+g++ -o pamsel.exe pamsel.cc
+```
+
 sample output:
 
 ![pamsel output](pamsel-output.jpg)
