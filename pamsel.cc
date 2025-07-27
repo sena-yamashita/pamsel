@@ -286,7 +286,13 @@ int main (int argc, char* argv[])
         strcpy( lastuid, field[MS_UID] );
    }
 
+#ifdef __APPLE__
+   // macOS doesn't support fcloseall()
+   fclose(inf);
+   if (auditid > 0) fclose(auf);
+#else
    fcloseall();
+#endif
    return 0;
 }
 
